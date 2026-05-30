@@ -1,0 +1,51 @@
+name: "🐛 Reporte de Bug"
+description: "Informa sobre un error o comportamiento inesperado."
+title: "[BUG]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### ¡Gracias por reportar el problema!
+        Por favor, completa el siguiente formulario para ayudarnos a identificar y solucionar el error lo antes posible.
+
+  - type: input
+    id: environment
+    attributes:
+      label: Ambiente afectado
+      placeholder: "Ej. Desarrollo, QA, Producción"
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Pasos para reproducir
+      description: Cuéntanos exactamente qué acciones realizas para que aparezca el error.
+      placeholder: |
+        1. Ir a la sección...
+        2. Hacer clic en el botón...
+        3. Ver el mensaje de error...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severidad del impacto
+      options:
+        - "Baja (Cosmético / Tiene alternativa)"
+        - "Media (Funcionalidad secundaria afectada)"
+        - "Alta (Bloqueo de flujo crítico / Error de servidor)"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Verificaciones previas
+      options:
+        - label: "He revisado los logs del sistema antes de reportar."
+          required: true
+        - label: "Me gustaría trabajar en la solución de este bug si es aprobado."
+          required: false
